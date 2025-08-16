@@ -1,0 +1,271 @@
+task: detect
+mode: train
+model: yolov8n.pt
+data:
+  train: data/images/train
+  val: data/images/val
+  nc: 164
+  names:
+  - AlfaRomeo_Giulietta
+  - AstonMartin_Rapide
+  - Audi_A1
+  - Audi_A3
+  - Audi_A4Allroad
+  - Audi_A4Avant
+  - Audi_A6
+  - Audi_A8
+  - Audi_Q2
+  - Audi_Q3
+  - Audi_Q5
+  - Audi_S3
+  - Audi_S5Coupe
+  - Audi_S5Sportback
+  - Audi_S7
+  - Audi_SQ7
+  - Audi_TT
+  - Buick_Enclave
+  - Buick_LaCrosse
+  - Cadillac_CTS-V
+  - Cadillac_SRX
+  - Chevrolet_Aveo
+  - Chevrolet_Camaro
+  - Chevrolet_Corvette
+  - Chevrolet_Equinox
+  - Chevrolet_Malibu
+  - Chevrolet_Volt
+  - Chrysler_Pacifica
+  - Chrysler_TownAndCountry
+  - Citroen_Berlingo
+  - Citroen_C3
+  - Citroen_C4
+  - Citroen_C4Cactus
+  - Citroen_C4Picasso
+  - Citroen_DS4
+  - Dacia_Duster
+  - Dodge_Caliber
+  - Dodge_Durango
+  - Fiat_500L
+  - Fiat_Panda
+  - Ford_Edge
+  - Ford_EscapeHybrid
+  - Ford_Explorer
+  - Ford_Fiesta
+  - Ford_Focus
+  - Ford_Taurus
+  - GMC_Terrain
+  - Honda_AccordHybrid
+  - Honda_City
+  - Honda_Civic
+  - Honda_CR-V
+  - Honda_Crosstour
+  - Honda_Jazz
+  - Honda_Pilot_2012
+  - Honda_Pilot_2015
+  - Honda_Ridgeline
+  - Hyundai_Equus
+  - Hyundai_i10
+  - Hyundai_i40
+  - Hyundai_IoniqHybrid
+  - Hyundai_SantaFe
+  - Hyundai_SantaFeGDI
+  - Hyundai_Sonata_2009
+  - Hyundai_Sonata_2015
+  - Infiniti_FX
+  - Infiniti_Q60
+  - Infinity_M
+  - Jaguar_XF
+  - Jeep_Cherokee
+  - Jeep_GrandCherokee
+  - KIA_Rio
+  - KIA_Sorento
+  - KIA_Soul
+  - LandRover_RangeRoverEvoque
+  - LandRover_RangeRoverSport
+  - Lexus_CT
+  - Lexus_GS
+  - Lexus_NX
+  - Lincoln_MKS
+  - Lincoln_MKX
+  - Maserati_Levante
+  - Mazda_3
+  - Mazda_CX-3
+  - Mazda_CX-5
+  - Mercedes-Benz_A-class
+  - Mercedes-Benz_AMG-GT
+  - Mercedes-Benz_B-class
+  - Mercedes-Benz_C-class
+  - Mercedes-Benz_C-classAMG
+  - Mercedes-Benz_CLS-class
+  - Mercedes-Benz_E-class
+  - Mercedes-Benz_GLC
+  - Mercedes-Benz_GLK-class
+  - Mercedes-Benz_M-class
+  - Mercedes-Benz_S-class
+  - Mercedes-Benz_S-classCoupe
+  - Mercedes-Benz_SLK-class
+  - Mercury_Milan
+  - Mitsubishi_Colt
+  - Mitsubishi_Outlander
+  - Nissan_370Z
+  - Nissan_Murano
+  - Nissan_Note
+  - Nissan_Qashqai
+  - Opel_ADAM
+  - Opel_Astra
+  - Opel_Cascada
+  - Opel_Combo
+  - Opel_Corsa
+  - Opel_Insignia
+  - Opel_Meriva
+  - Opel_Zafira
+  - Peugeot_108
+  - Peugeot_308
+  - Peugeot_5008_2009
+  - Peugeot_5008_2017
+  - Peugeot_508
+  - Peugeot_508SW
+  - Peugeot_iON
+  - Porsche_Cayenne
+  - Porsche_Cayman
+  - Porsche_Panamera_2010
+  - Porsche_Panamera_2016
+  - Renault_Captur
+  - Renault_Kadjar
+  - Renault_Laguna
+  - Renault_Megane
+  - Renault_MeganeCabrio
+  - Renault_Scenic
+  - Renault_Twingo
+  - Saab_9-5
+  - Saleen_S7
+  - SEAT_Ateca
+  - SEAT_Exeo
+  - SEAT_Leon
+  - Skoda_Kodiaq
+  - Skoda_Octavia
+  - Skoda_Rapid
+  - Skoda_RapidSpaceback
+  - Skoda_Superb_2015
+  - Skoda_SuperbCombi_2010
+  - Skoda_Yeti
+  - Subaru_Legacy
+  - Suzuki_Alto
+  - Suzuki_SX4
+  - Suzuki_Vitara_2009
+  - Suzuki_Vitara_2015
+  - Tesla_ModelS
+  - Toyota_Avensis
+  - Toyota_LandCruiser
+  - Toyota_Noah
+  - Toyota_Passo
+  - Toyota_Prius
+  - Toyota_PriusPlug-In
+  - Toyota_Yaris_2009
+  - Toyota_Yaris_2011
+  - Volvo_V90
+  - Volvo_XC90
+  - VW_Golf
+  - VW_Jetta
+  - VW_PassatAlltrack
+  - VWCV_Multivan
+epochs: 100
+time: null
+patience: 100
+batch: 16
+imgsz: 640
+save: true
+save_period: -1
+cache: false
+device: cpu
+workers: 8
+project: models/
+name: traffic_analysis_model8
+exist_ok: false
+pretrained: true
+optimizer: auto
+verbose: true
+seed: 0
+deterministic: true
+single_cls: false
+rect: false
+cos_lr: false
+close_mosaic: 10
+resume: false
+amp: true
+fraction: 1.0
+profile: false
+freeze: null
+multi_scale: false
+overlap_mask: true
+mask_ratio: 4
+dropout: 0.0
+val: true
+split: val
+save_json: false
+conf: 0.25
+iou: 0.45
+max_det: 300
+half: false
+dnn: false
+plots: true
+source: null
+vid_stride: 1
+stream_buffer: false
+visualize: false
+augment: false
+agnostic_nms: false
+classes: null
+retina_masks: false
+embed: null
+show: false
+save_frames: false
+save_txt: false
+save_conf: false
+save_crop: false
+show_labels: true
+show_conf: true
+show_boxes: true
+line_width: null
+format: torchscript
+keras: false
+optimize: false
+int8: false
+dynamic: false
+simplify: true
+opset: null
+workspace: null
+nms: false
+lr0: 0.01
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+box: 7.5
+cls: 0.5
+dfl: 1.5
+pose: 12.0
+kobj: 1.0
+nbs: 64
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+degrees: 0.0
+translate: 0.1
+scale: 0.5
+shear: 0.0
+perspective: 0.0
+flipud: 0.0
+fliplr: 0.5
+bgr: 0.0
+mosaic: 1.0
+mixup: 0.0
+cutmix: 0.0
+copy_paste: 0.0
+copy_paste_mode: flip
+auto_augment: randaugment
+erasing: 0.4
+cfg: null
+tracker: botsort.yaml
+save_dir: models\traffic_analysis_model8
